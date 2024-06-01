@@ -50,7 +50,6 @@ namespace MicLevelViewer
             // 別タスクで監視処理を実行
             Task.Run(() => {
 
-
             });
         }
 

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicLevelViewer", "MicLevelViewer.csproj", "{E990268F-8F09-4BD3-9526-76817B478BBA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicLevelViewer", "MicLevelViewer.csproj", "{47FCC5A3-8E6E-4E7C-8384-9B81F16E87CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E990268F-8F09-4BD3-9526-76817B478BBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E990268F-8F09-4BD3-9526-76817B478BBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E990268F-8F09-4BD3-9526-76817B478BBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E990268F-8F09-4BD3-9526-76817B478BBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47FCC5A3-8E6E-4E7C-8384-9B81F16E87CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47FCC5A3-8E6E-4E7C-8384-9B81F16E87CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47FCC5A3-8E6E-4E7C-8384-9B81F16E87CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47FCC5A3-8E6E-4E7C-8384-9B81F16E87CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {CE5E0D20-E997-4AE4-BB83-945419913076}
+		SolutionGuid = {85D787E9-218E-483A-8DEE-960C30FC9E12}
 	EndGlobalSection
 EndGlobal

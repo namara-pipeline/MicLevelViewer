@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E990268F-8F09-4BD3-9526-76817B478BBA}</ProjectGuid>
+    <ProjectGuid>{47FCC5A3-8E6E-4E7C-8384-9B81F16E87CE}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>MicLevelViewer</RootNamespace>
     <AssemblyName>MicLevelViewer</AssemblyName>
@@ -51,11 +51,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>images\level_max.ico</ApplicationIcon>
+    <ApplicationIcon>level_max.ico</ApplicationIcon>
   </PropertyGroup>
-  <PropertyGroup />
   <PropertyGroup>
-    <ManifestCertificateThumbprint>738E63C45D358B6A9938C1B3E79789BA9E57C6A0</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>32150A5E8FC542441CAA772ABC922589B1E2FFF2</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>MicLevelViewer_TemporaryKey.pfx</ManifestKeyFile>
@@ -64,18 +63,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <TargetZone>LocalIntranet</TargetZone>
-  </PropertyGroup>
-  <PropertyGroup />
-  <PropertyGroup>
-    <SignManifests>false</SignManifests>
-  </PropertyGroup>
-  <PropertyGroup />
-  <PropertyGroup />
-  <PropertyGroup />
-  <PropertyGroup />
-  <PropertyGroup>
-    <NoWin32Manifest>true</NoWin32Manifest>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Win32.Registry, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -172,6 +160,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="images\level_1.ico" />
+    <Resource Include="images\level_3.ico" />
+    <Resource Include="images\level_5.ico" />
+    <Resource Include="images\level_8.ico" />
+    <Resource Include="images\level_max.ico" />
+    <Resource Include="images\level_min.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="level_max.ico" />
+  </ItemGroup>
+  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.7.2 %28x86 および x64%29</ProductName>
@@ -182,14 +181,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="images\level_1.ico" />
-    <Resource Include="images\level_3.ico" />
-    <Resource Include="images\level_5.ico" />
-    <Resource Include="images\level_8.ico" />
-    <Resource Include="images\level_max.ico" />
-    <Resource Include="images\level_min.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
