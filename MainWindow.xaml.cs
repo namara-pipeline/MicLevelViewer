@@ -16,21 +16,22 @@ using System.Windows.Shapes;
 using System.Reflection;
 using NAudio.Wave;
 
-
 namespace MicLevelViewer
 {
     /// <summary>
     /// MainWindow.xaml の相互作用ロジック
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : System.Windows.Window
     {
         public event EventHandler<string> ImageSelect;
         private WaveInEvent waveIn;
+        private MovingAverage movingAverage;
 
         public MainWindow()
         {
             InitializeComponent();
             this.Title = Assembly.GetExecutingAssembly().GetName().Name;
+            movingAverage = new MovingAverage(3);
         }
 
         // マイクの一覧を取得し、ComboBox に追加する
@@ -51,10 +52,6 @@ namespace MicLevelViewer
                     MicrophoneComboBox.Items.Add(microphone);
                 }
             }
-            else
-            {
-                MicrophoneComboBox.Items.Add("-");
-            }
             // 最初のアイテムを選択状態にする
             MicrophoneComboBox.SelectedIndex = 0;
         }
@@ -70,7 +67,7 @@ namespace MicLevelViewer
 
             waveIn = new WaveInEvent { DeviceNumber = MicrophoneComboBox.SelectedIndex };
             waveIn.DataAvailable += OnDataAvailable;
-            waveIn.BufferMilliseconds = 100; // OnDataAvailableが呼ばれる周期 100ms
+            // waveIn.BufferMilliseconds = 100; // OnDataAvailableが呼ばれる周期 100ms
             waveIn.StartRecording();
         }
 
@@ -84,7 +81,6 @@ namespace MicLevelViewer
                 if (sample32 < 0) sample32 = -sample32;
                 if (sample32 > max) max = sample32;
             }
-            MovingAverage movingAverage = new MovingAverage(10);
             movingAverage.AddValue(max);
             double ave = movingAverage.GetAverage();
 
@@ -101,24 +97,28 @@ namespace MicLevelViewer
                 {
                     iconName = "level_max.ico";
                 }
-                else if (ave >= 0.050)
+                else if (ave >= 0.4)
                 {
                     iconName = "level_8.ico";
                 }
-                else if (ave >= 0.030)
+                else if (ave >= 0.1)
                 {
                     iconName = "level_5.ico";
                 }
-                else if (ave >= 0.010)
+                else if (ave >= 0.03)
                 {
                     iconName = "level_3.ico";
                 }
-                else if (ave >  0.001)
+                else if (ave >  0.01)
                 {
                     iconName = "level_1.ico";
                 }
-                ImageSelect?.Invoke(this, iconName);
+                OnImageSelect(iconName);
             });
+        }
+        protected virtual void OnImageSelect(string iconName)
+        {
+            ImageSelect?.Invoke(this, iconName);
         }
     }
 

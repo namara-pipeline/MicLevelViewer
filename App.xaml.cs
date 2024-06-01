@@ -75,7 +75,7 @@ namespace MicLevelViewer
 
                 // 画面中央に表示
                 _win.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-                // _win.Show();
+                _win.Show();
 
                 // 閉じるボタンの処理
                 _win.Closing += (sender, e) => {
@@ -95,6 +95,7 @@ namespace MicLevelViewer
         {
             // iconName に基づいてアイコンを設定する
             string uriString = "images/" + iconName;
+
             // システムトレイのアイコン変更
             var iconSystemTray = GetResourceStream(new Uri(uriString, UriKind.Relative)).Stream;
             _notifyIcon.Icon = new System.Drawing.Icon(iconSystemTray);

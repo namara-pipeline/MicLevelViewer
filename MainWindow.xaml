@@ -8,6 +8,7 @@
         Title="" Width="380" Height="120"
         WindowStyle="ThreeDBorderWindow" ResizeMode="CanMinimize"
         Icon="images/level_max.ico">
+    <!-- 最大化ボタン無効 -->
     <Window.Resources>
         <Style TargetType="Window">
             <Setter Property="Template">
