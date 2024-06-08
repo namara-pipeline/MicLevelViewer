@@ -1,5 +1,6 @@
 # Ignore the obj directory
 obj/
 bin/
+publish/
 .vs/
 *.csproj.user
